@@ -1,0 +1,249 @@
+:root{
+    --text-color-main: white;
+    --back-color: #171717;
+    --secondary-color: #7858A6;
+    --third-color: #f17eef;
+    --forth-color: #67718e;
+    --font: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --max-width: 1200px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font);
+    background-color: var(--back-color);
+}
+
+header{
+    display: flex;
+    position: fixed;
+    width: min(100%);
+    padding: .75rem 1.5rem;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    z-index: 20;
+}
+
+header .title-main{
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-color-main);
+}
+
+main{
+    min-height: 100vh;
+    width: min(100%,var(--max-width));
+    margin-inline:auto;
+    position: relative;
+    z-index: 1;
+
+}
+
+main .challenge-article{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    grid-gap:5rem;
+    padding: 1.5rem;
+}
+
+.section-in, .section-out{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.section-in{
+    width: min(100%);
+    padding-top: .5rem;
+}
+
+.section-out{
+    width: 420px;
+    position: relative;
+}
+
+.section-in .text-main{
+    width: 100%;
+    min-height: 300px;
+    font-size: 2em;
+    resize: none;
+    color: var(--text-color-main);
+     /*background-color: var(--back-color); */
+    background: transparent;
+    border: 5px solid #333;
+    border-radius: 10px;
+    transition: .5s;
+    padding: 1rem 2rem;
+    outline: none;
+}
+
+.section-in .text-main:hover{
+    border: 5px solid var(--third-color);
+    box-shadow: 0 0 20px var(--third-color), inset 0 0 20px var(--third-color);
+}
+
+.section-in .text-main:hover::placeholder{
+    color: #d770c2;
+    text-shadow: 0 0 20px var(--third-color), inset 0 0 20px var(--third-color);
+    
+}
+
+
+
+.alert-label{
+    color: var(--text-color-main);
+
+}
+
+.area-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+
+.btn{
+    width: auto;
+    padding: .5rem 1.25rem;
+    cursor: pointer;
+    position: relative;
+    box-shadow:0 0.25rem 2.5rem -0.875rem #d770c2;
+    background: var(--back-color);
+    background-clip: padding-box;
+
+    color: var(--text-color-main);
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: .375rem;
+}
+
+.desencript:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -0.16rem;
+    border-radius: inherit;
+    background: linear-gradient(90deg,#f17eef,#4C3575);
+}
+
+
+.encript, .desencript{
+
+
+}
+
+.btn.encript, .btn.copy{
+    color: #101a38;
+    background: linear-gradient(90deg,#fe9fb2,#d89ffe);
+    box-shadow: 0 0.25rem 2.5rem -0.875rem #d770c2;
+}
+
+
+.result-output{
+    display: none;
+    position: relative;
+    z-index: 1;
+    min-height: 360px;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+}
+
+#default-output{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-text{
+    color: var(--forth-color);
+}
+
+.section-out{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    background:var(--back-color);
+    background-clip: padding-box;
+    /*border-color: linear-gradient(90deg,#f17eef,#4C3575); */
+    color: var(--text-color-main);
+
+    padding: 30px 10px;
+
+}
+
+.section-out::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    border-radius: inherit;
+    background: linear-gradient(90deg,#f17eef,#4C3575);
+}
+
+.text-output{
+    font-size: 2em;
+}
+
+@media (max-width: 875px){
+    main .challenge-article{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 2.5rem;
+        gap: 1.5rem;
+    }
+
+    .section-in{
+        width: min(100%);
+    }
+
+    .area-buttons{
+        flex-direction: column;
+
+    }
+
+    .btn{
+        width: 100%;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75rem 1.125rem;
+    }
+
+    .section-out{  
+        width: min(100%);    
+    }
+
+
+    .img-default{
+        max-width: 80%;
+       /* width="336" height="304" */
+    }
+
+    .result-output{
+        min-height: 220px;
+    }
+}
