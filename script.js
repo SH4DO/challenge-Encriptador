@@ -68,7 +68,7 @@ function process(op) {
 
 }
 
-
+/*
 copyText.addEventListener('click', () => {
     let text = textResponse.textContent;
     navigator.clipboard.writeText(text);
@@ -76,7 +76,21 @@ copyText.addEventListener('click', () => {
     alert('texto copiado:');
 });
 
+*/
+
 function validText(cadena){
     const validar = /^[a-z\s]+$/ ; 
     return validar.test(cadena);
 }
+
+const copyClipboard = async () => {
+    let texto = textResponse.textContent;
+    try {
+       await navigator.clipboard.writeText(texto); 
+       console.log('texto copiado!');
+       
+    } catch (error) {
+        console.error('Error al copiar:',error);
+    }
+}
+
