@@ -146,6 +146,7 @@ main .challenge-article{
 
 
 .result-output{
+
     display: none;
     position: relative;
     z-index: 1;
@@ -158,6 +159,7 @@ main .challenge-article{
 
 .text-output{
     font-size: 1.8rem;
+    word-break: break-all;
 }
 
 #default-output{
@@ -250,6 +252,7 @@ footer{
     }
 
     .result-output{
+        width: min(100%);
         min-height: 220px;
     }
 }
